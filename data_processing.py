@@ -45,7 +45,10 @@ def filter(condition, dict_list):
 
 # Let's write a function to do aggregation given an aggregation function and an aggregation key
 def aggregate(aggregation_key, aggregation_function, dict_list):
-    pass
+    values = []
+    for item in dict_list:
+        values.append(float(item[aggregation_key]))
+    return aggregation_function(values)
 
 # Let's write code to
 # - print the average temperature for all the cities in Italy
